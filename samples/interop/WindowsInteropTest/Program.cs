@@ -14,6 +14,9 @@ namespace WindowsInteropTest
         {
             System.Windows.Forms.Application.EnableVisualStyles();
             System.Windows.Forms.Application.SetCompatibleTextRenderingDefault(false);
+#if NETCOREAPP3_0_OR_GREATER
+            System.Windows.Forms.Application.SetHighDpiMode(System.Windows.Forms.HighDpiMode.PerMonitorV2);
+#endif
             AppBuilder.Configure<App>()
                 .UseWin32()
                 .UseSkia()
